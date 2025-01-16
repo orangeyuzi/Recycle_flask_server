@@ -172,7 +172,7 @@ def fetch_weekly_data(email, category):
     formatted_data = [{"value": week_data[day], "label": day} for day in week_data]
     return formatted_data
 
-@app.route('/showAllStatistic', methods=['POST'])
+@statistic.route('/showAllStatistic', methods=['POST'])
 def showAllStatistic():
     data = request.get_json()
     email = data.get('email')
@@ -183,7 +183,7 @@ def showAllStatistic():
     result = fetch_pie_data(email)
     return jsonify(result)
 
-@app.route('/showDailyStatistic', methods=['POST'])
+@statistic.route('/showDailyStatistic', methods=['POST'])
 def showDailyStatistic():
     data = request.get_json()
     email = data.get('email')
@@ -194,7 +194,7 @@ def showDailyStatistic():
     result = fetch_bar_data(email)
     return jsonify(result)
 
-@app.route('/showWeeklyStatistic', methods=['POST'])
+@statistic.route('/showWeeklyStatistic', methods=['POST'])
 def showWeeklyStatistic():
     data = request.get_json()
     email = data.get('email')

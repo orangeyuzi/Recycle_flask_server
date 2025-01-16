@@ -1,6 +1,7 @@
 from flask import Flask
 from flask_cors import CORS
-from login import login
+from Login import login
+# from modify import modify
 from statistic import statistic
 from camera import camera
 import secrets
@@ -15,7 +16,7 @@ app.secret_key = secrets.token_hex(16)  # 保護session
 
 # 註冊附屬檔案在APP上
 app.register_blueprint(login)  # 登入介面後端
-app.register_blueprint(modify) # modify
+# app.register_blueprint(modify) # modify
 app.register_blueprint(statistic)  # 統計後端
 app.register_blueprint(camera) #相機後端
 
